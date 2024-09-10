@@ -1,4 +1,4 @@
-# Sentianl Ricks: Financial Risk Mitigation System
+# Sentinal Ricks: Financial Risk Mitigation System
 ## Risk Pulse
 
 This README provides an overview of the project, including team details, relevant links, tasks completed, tech stack, key features, and steps to run the project locally.
