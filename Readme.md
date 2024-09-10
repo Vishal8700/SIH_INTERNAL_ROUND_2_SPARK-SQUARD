@@ -34,7 +34,6 @@ This README provides an overview of the project, including team details, relevan
 
 ## Project Links
 
-- **Final SIH Presentation:** [Final SIH Presentation](https://github.com/Vishal8700/SIH_INTERNAL_ROUND_2_SPARK-SQUARD/blob/master/files/RiskPulse%20SIH.pdf)
--                                                        
+- **Final SIH Presentation:** [Final SIH Presentation](https://github.com/Vishal8700/SIH_INTERNAL_ROUND_2_SPARK-SQUARD/blob/master/files/RiskPulse%20SIH.pdf)                                   
 - **Video Demonstration:** [Watch Video][(UNLISTED YOUTUBE LINK)](https://youtu.be/8ynddSOKx1k)
 - **Source Code:** [GitHub Repository](https://github.com/Vishal8700/SIH_INTERNAL_ROUND_1_SPARK-SQUARD/tree/master/code))
