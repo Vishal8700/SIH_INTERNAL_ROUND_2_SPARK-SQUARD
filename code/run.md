@@ -1,185 +1,51 @@
+# Project Setup:
 
-
-# Project Setup and Running Guide
-
-## Overview
-
-This guide outlines the steps to set up and run the frontend and backend for this project. The frontend is managed with npm, the backend is written in Go, and ZeroTier is used for remote network access.
+This document contains instructions for setting up the frontend, backend, and Dockerized microservices in a full-stack application.
 
 ## Prerequisites
 
-1. **Node.js** and **npm** (for frontend as well as backend )
-2. **Go** (for backend)
-3. **ZeroTier** (for remote network access)
-
-### Step 1: Clone the Repository
-
-First, clone the repository to your local machine:
-
-```sh
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-```
-
-## Frontend Setup
-
-### Install Dependencies
-
-Navigate to the frontend directory and install the necessary dependencies:
-
-```sh
-cd frontend
-npm install
-```
-
-### Start the Frontend
-
-Once the dependencies are installed, start the frontend development server:
-
-```sh
-npm start
-```
-
-The frontend should now be running at `http://localhost:3000` or the port specified in your configuration.
-
-## Backend Setup
-
-### Install Go Modules
-
-Navigate to the backend directory and initialize Go modules if not already done:
-
-```sh
-cd ../backend
-go mod tidy
-```
-
-### Run the Backend
-
-Start the backend server:
-
-```sh
-go init
-go run .
-```
-
-The backend should now be running, typically on `http://localhost:8080` or the port specified in your Go code.
-
-## Models Initilisation 
-
-install zerotier , connect to our local network / use port forwarding on at port 3000 , 5000 and 8000 to establish peer and to concurrent run the require hosts (as we made 5 server for different parts( frontent , backend , for each ai model, and for blockchain) 
-then run servers as per respective commmads 
-
-for models:
-```python modle_main_filename.py```
-or 
-```uvicorn modle_main_filename:app```
-
-## installing Nginx, FastAPI, and Uvicorn:
-
-### Step 1: Install Nginx
-
-```bash
-sudo apt update
-sudo apt install nginx
-```
-
-### Step 2: Install FastAPI and Uvicorn
-
-```bash
-pip install fastapi uvicorn
-```
-
-### Step 3: Configure Nginx
-
-Create an Nginx configuration file for your FastAPI application:
-
-```bash
-sudo nano /etc/nginx/sites-available/your_project
-
-# Add the following content:
-server {
-    listen 80;
-    server_name your_domain_or_IP;
-
-    location / {
-        proxy_pass http://127.0.0.1:8000;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-```
-
-Enable the configuration by creating a symbolic link:
-
-```bash
-sudo ln -s /etc/nginx/sites-available/your_project /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl restart nginx
-```
-
-### Step 4: Run FastAPI with Uvicorn
-
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-Replace `main:app` with the appropriate module name where your FastAPI instance is created.
-
-These steps will set up and run your FastAPI application behind an Nginx server, accessible on port 80.
-
-## ZeroTier Setup
-
-ZeroTier is used to enable network access to remote systems. Follow these steps to configure ZeroTier:
-
-### Install ZeroTier
-
-1. **For Linux:**
-
-    ```sh
-    curl -s https://install.zerotier.com | sudo bash
-    ```
-
-2. **For macOS:**
-
-    Download and install the ZeroTier client from the [ZeroTier website](https://www.zerotier.com/download/).
-
-3. **For Windows:**
-
-    Download and install the ZeroTier client from the [ZeroTier website](https://www.zerotier.com/download/).
-
-### Join a Network
-
-Join the ZeroTier network required for your project:
-
-```sh
-zerotier-cli join <network-id>
-```
-
-Replace `<network-id>` with the actual network ID 363c67c55a692fda .
-
-### Verify Connection
-
-Check if you are connected to the network:
-
-```sh
-zerotier-cli listnetworks
-```
-
-Ensure that you see the network you joined and that it has a valid status.
-
-## Additional Notes
-
-- Make sure to update the `.env` or configuration files with the appropriate environment variables and settings for both frontend and backend.
-- If you encounter any issues, check the logs for both frontend and backend, and ensure ZeroTier is correctly configured.
-
-## Troubleshooting
-
-- **Frontend Issues:** Ensure all npm packages are installed and try restarting the development server.
-- **Backend Issues:** Check Go code for errors and ensure all Go modules are correctly installed.
-- **ZeroTier Issues:** Verify network settings and consult ZeroTier documentation if necessary.
+- **Node.js**: Download and install from [Node.js official website](https://nodejs.org/).
+- **Python 3.8+**: Download and install from [Python official website](https://www.python.org/).
+- **MongoDB**: Set up a local or cloud instance.
+- **Git**: Install Git to clone repositories.
+- **Docker**: Install Docker from [Docker official website](https://www.docker.com/).
+- **Nginx**: Install Nginx for reverse proxying services.
+- **ZeroTier**: Install ZeroTier for secure networking. [Download here](https://www.zerotier.com/download/).
 
 ---
 
-Feel free to adjust the guide based on the specifics of your project and setup.
+## Frontend: MERN Stack
+
+The frontend is built using the MERN stack (MongoDB, Express, React, Node.js).
+
+### Installation Steps
+
+1. Clone the repository
+2. npm install
+3. pip install -r requirements.txt
+4. run all 18 image at docker
+5. docker-compose build
+6. docker-compose up -d
+
+
+# 🌟 **Available Services and Ports** 🌟
+
+| **Service**                           | **Port**  |
+|---------------------------------------|-----------|
+| ![Market Risk Predictor](https://img.shields.io/badge/-Market%20Risk%20Predictor-blue)  | `8000`    |
+| ![Operational Risk Predictor](https://img.shields.io/badge/-Operational%20Risk%20Predictor-blue)  | `8001`    |
+| ![Model Predictor + Document Intelligence](https://img.shields.io/badge/-Model%20Predictor%20%2B%20Document%20Intelligence-blue) | `8002`    |
+| ![Melvis](https://img.shields.io/badge/-Melvis-orange)                     | `19530`   |
+| ![Trade Predictor](https://img.shields.io/badge/-Trade%20Predictor-blue)   | `8003`    |
+| ![Scam Prevention](https://img.shields.io/badge/-Scam%20Prevention-red)    | `8004`    |
+| ![Loan Repayment Predictor](https://img.shields.io/badge/-Loan%20Repayment%20Predictor-green) | `8005`    |
+| ![Default Risk Predictor](https://img.shields.io/badge/-Default%20Risk%20Predictor-green) | `8006`    |
+| ![Value at Risk](https://img.shields.io/badge/-Value%20at%20Risk-purple)   | `8007`    |
+| ![Bank SIH](https://img.shields.io/badge/-Bank%20SIH-cyan)                 | `8008`    |
+| ![Bank FinRiskNew](https://img.shields.io/badge/-Bank%20FinRiskNew-cyan)   | `8009`    |
+| ![Clients Risk](https://img.shields.io/badge/-Clients%20Risk-lightgrey)    | `8012`    |
+| ![Responder](https://img.shields.io/badge/-Responder-yellow)               | `8099`    |
+| ![Extractor](https://img.shields.io/badge/-Extractor-lightgreen)           | `8098`    |
+| ![Imputer](https://img.shields.io/badge/-Imputer-lightgreen)               | `8097`    |
+| ![Model Finder](https://img.shields.io/badge/-Model%20Finder-lightgreen)   | `8096`    |
+| ![Internal Backend](https://img.shields.io/badge/-Internal%20Backend-lightblue) | `8095`    |
