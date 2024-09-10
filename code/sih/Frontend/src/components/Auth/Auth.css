@@ -1,0 +1,157 @@
+/* Auth.css */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fc6f6f0e;
+}
+
+.auth-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.auth-form:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #ff6600;
+}
+
+.logo svg {
+  margin-right: 0.5rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #333; /* Darker color for better readability */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff6600; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+button {
+  background-color: #333;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.auth-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-links a {
+  color: #0066cc;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.auth-links a:hover {
+  color: #004999; /* Darker shade on hover */
+}
+
+.terms-privacy {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.terms-privacy a {
+  color: #666;
+  text-decoration: none;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  color: #d32f2f;
+  margin-bottom: 1rem;
+}
+
+.error-message svg {
+  margin-right: 0.5rem;
+}
+/* Popup message styles */
+.popup-message {
+  position: fixed; /* Ensure it's fixed relative to the viewport */
+  top: 100px; /* Adjust this value to control the vertical position */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: #4caf50; /* Green background for success */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000; /* Ensure it appears above other content */
+  animation: slideDown 0.5s ease-out; /* Animation for the popup */
+}
+
+/* Animation for the popup */
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(-20px); /* Starts slightly above the final position */
+    opacity: 0; /* Starts invisible */
+  }
+  to {
+    transform: translateX(-50%) translateY(0); /* Ends at the final position */
+    opacity: 1; /* Ends visible */
+  }
+}
+
+/* Optional: If you want the popup to hide after a certain time */
+.popup-message.hide {
+  animation: slideUp 0.5s ease-out forwards; /* Hide animation */
+}
+
+/* Animation for hiding the popup */
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(0); /* Starts at the final position */
+    opacity: 1; /* Starts visible */
+  }
+  to {
+    transform: translateX(-50%) translateY(-20px); /* Moves above the final position */
+    opacity: 0; /* Ends invisible */
+  }
+}

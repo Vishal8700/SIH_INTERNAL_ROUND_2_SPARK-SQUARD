@@ -1,0 +1,99 @@
+/* LoanRepaymentProbability.css */
+.loan-repayment-probability {
+  background-color:#fc6f6f0e; /* Background color for the section */
+  padding: 2rem;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.loan-repayment-probability h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ff7f50;
+}
+
+.loan-repayment-probability form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-left: 20px;
+  margin-right: 20px
+}
+
+.input-column {
+  flex: 2; /* Allow the columns to grow equally */
+  margin-right: 2rem; /* Space between columns */
+  margin-left: 2rem;
+}
+
+.input-column:last-child {
+  margin-right: 20px;
+  margin-left: 40px; /* Remove margin for last column */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0,8rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+  width: 100%; /* Full width */
+  box-sizing: border-box;
+}
+
+#btn {
+  background-color: #ff6347;
+  color: white;
+  padding: 0.75rem;
+  max-width: 400px;
+margin-left: 40%;
+  align-items: center;
+  justify-items: center;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#btn{
+  background-color: #ff6347;
+}
+button:hover {
+  background-color: #ff6347; /* Button hover color */
+}
+
+
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 1000; /* Ensure it appears above other elements */
+  color: white; /* Text color for the popup */
+}
+
+.popup.defaulted {
+  background-color: red; /* Red for defaulted */
+}
+
+.popup.late {
+  background-color: yellow; /* Yellow for late */
+  color: black; /* Black text for readability */
+}
+
+.popup.on-time {
+  background-color: green; /* Green for on-time */
+}

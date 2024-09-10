@@ -1,0 +1,93 @@
+.market-risk-model {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 50px auto 100px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(92, 92, 92, 0.556);
+}
+
+.market-risk-model h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #fb3a0a;
+}
+
+.market-risk-model form {
+  display: flex;
+  flex-direction: column;
+}
+
+.market-risk-model .form-group {
+  margin-bottom: 1rem;
+}
+
+.market-risk-model label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.market-risk-model input[type="number"] {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.market-risk-model button {
+  background-color: #ff7f50;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.market-risk-model button:hover {
+  background-color: #ff6347;
+}
+
+.popup {
+  position: fixed;
+  top: 90%;
+  right: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  animation: fadeInOut 5s;
+}
+
+.popup.safe {
+  background-color: #28a745; /* Green for safe */
+}
+
+.popup.danger {
+  background-color: #dc3545; /* Red for unsafe */
+}
+
+.popup-icon {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.popup-icon {
+  font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

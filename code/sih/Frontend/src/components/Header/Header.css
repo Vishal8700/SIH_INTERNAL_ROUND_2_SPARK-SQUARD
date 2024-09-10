@@ -1,0 +1,60 @@
+/* Header.css */
+
+.header {
+  background-color: #ff7f50; /* Primary color */
+  color: #ffffff; /* Text color */
+  padding: 1rem; /* Padding for the header */
+  font-family: 'Poppins', sans-serif; /* Font family */
+}
+
+.header-container {
+  max-width: 1200px; /* Maximum width for the header content */
+  margin: 0px auto; /* Center the header container */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between title and nav */
+  align-items: center; /* Center items ve2tically */
+}
+
+.header-title {
+  font-size: 1.25rem; /* Font size for the title */
+  font-weight: bold; /* Bold title */
+  margin-right:80px; /* Add space between title and links */
+}
+
+.header-nav {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  align-items: center; /* Center items vertically */
+  margin: 0; /* Remove default margin */
+  margin-left: 250px;
+  display: flex; /* Use flexbox for navigation items */
+}
+
+.nav-link {
+  color: #ffffff; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+  margin-left: 1.5rem; /* Space between navigation items */
+  font-family: 'Poppins', sans-serif; /* Font family */
+  font-weight: normal; /* Normal font weight */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+  color: #fff347; /* Accent color on hover */
+}
+
+.nav-button {
+  background-color: #fff347; /* Button background color */
+  color: #ff7f50; /* Button text color */
+  padding: 0.5rem 1rem; /* Padding inside the button */
+  border: none; /* Remove default border */
+  border-radius: 30px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin-left: 1.5rem; /* Space before the button */
+}
+
+.nav-button:hover {
+  background-color: #eaff00; /* Button hover color */
+}
